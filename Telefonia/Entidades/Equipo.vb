@@ -1,16 +1,33 @@
 ﻿Public Class Equipo
 
+    Private _marca As Marca
+    Private _modelo As Modelo
     Private _serie As String
     Private _fechaVenta As Date
 
-    Sub New()
-        Me.Serie = ""
+    Sub New(marca As Marca, modelo As Modelo, serie As String)
+        Me.Marca = marca
+        Me.Modelo = modelo
+        Me.Serie = serie
     End Sub
 
-    Sub New(Marca As String, Modelo As String, Serie As String)
-        Me.Serie = Serie
-    End Sub
+    Public Property Marca As Marca
+        Get
+            Return _marca
+        End Get
+        Set(value As Marca)
+            _marca = value
+        End Set
+    End Property
 
+    Public Property Modelo As Modelo
+        Get
+            Return _modelo
+        End Get
+        Set(value As Modelo)
+            _modelo = value
+        End Set
+    End Property
     Public Property Serie As String
         Get
             Return _serie
