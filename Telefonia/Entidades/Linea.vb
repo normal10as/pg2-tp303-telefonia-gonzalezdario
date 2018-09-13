@@ -1,4 +1,5 @@
 ﻿Public Class Linea
+
     Private _codigoArea As UShort
     Private _numero As UInteger
     Private _activo As Boolean

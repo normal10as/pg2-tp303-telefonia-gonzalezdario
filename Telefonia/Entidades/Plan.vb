@@ -2,9 +2,9 @@
     Private _credito As UInteger
     Private _precio As Decimal
 
-    Sub New(Credito As UInteger, Precio As Decimal)
-        Me.Credito = Credito
-        Me.Precio = Precio
+    Sub New(credito As UInteger, precio As Decimal)
+        Me.Credito = credito
+        Me.Precio = precio
     End Sub
 
     Public Property Credito As UInteger
@@ -26,11 +26,13 @@
     End Property
 
     Public Sub NuevoConsumo(valor As UInteger)
-
+        If valor < _credito Then
+            _credito = _credito - valor
+        End If
     End Sub
 
     Public Function GetDisponible() As UInteger
-        Return 0
+        Return _credito
     End Function
 
 End Class

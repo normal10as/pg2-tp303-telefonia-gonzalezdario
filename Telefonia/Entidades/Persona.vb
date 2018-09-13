@@ -5,16 +5,10 @@
     Private _nombre As String
     Private _documento As UInteger
 
-    Sub New()
-        Me.Apellido = ""
-        Me.Nombre = ""
-        Me.Documento = 0
-    End Sub
-
-    Sub New(Apellido As String, Nombre As String, Documento As UInteger)
-        Me.Apellido = Apellido
-        Me.Nombre = Nombre
-        Me.Documento = Documento
+    Sub New(apellido As String, nombre As String, documento As UInteger)
+        Me.Apellido = apellido
+        Me.Nombre = nombre
+        Me.Documento = documento
     End Sub
 
     Public Property Apellido As String
@@ -49,6 +43,6 @@
     End Property
 
     Public Overrides Function ToString() As String
-        Return "Apellido y Nombre: " & Apellido & " " & Nombre & " Cuenta: " & Cuenta
+        Return Apellido & " " & Nombre & " " & Cuenta
     End Function
 End Class

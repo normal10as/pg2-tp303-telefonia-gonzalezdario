@@ -28,6 +28,7 @@
             _modelo = value
         End Set
     End Property
+
     Public Property Serie As String
         Get
             Return _serie
@@ -50,7 +51,7 @@
     End Sub
 
     Public Overrides Function ToString() As String
-        Return "Serie: " & Serie
+        Return Serie
     End Function
 
 End Class
