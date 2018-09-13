@@ -30,7 +30,7 @@
     End Sub
 
     Public Function GetDisponible() As UInteger
-
+        Return 0
     End Function
 
 End Class

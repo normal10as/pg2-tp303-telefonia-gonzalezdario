@@ -1,12 +1,18 @@
 ﻿Public Class Marca
     Private _nombre As String
 
+    Sub New(nombre As String)
+        Me.Nombre = nombre
+    End Sub
+
     Public Property Nombre As String
         Get
             Return _nombre
         End Get
         Set(value As String)
-            _nombre = value
+            If value.Length > 0 And value.Length <= 30 Then
+                _nombre = value
+            End If
         End Set
     End Property
 

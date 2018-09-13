@@ -8,8 +8,6 @@
     End Sub
 
     Sub New(Marca As String, Modelo As String, Serie As String)
-        Me.Marca = Marca
-        Me.Modelo = Modelo
         Me.Serie = Serie
     End Sub
 
@@ -18,7 +16,9 @@
             Return _serie
         End Get
         Set(value As String)
-            _serie = value
+            If value.Length > 0 And value.Length <= 15 Then
+                _serie = value
+            End If
         End Set
     End Property
 
@@ -28,8 +28,12 @@
         End Get
     End Property
 
-    Public Sub Vender()
-        _fechaVenta = Now.Date()
+    Public Sub Vender(fecha As Date)
+        _fechaVenta = fecha
     End Sub
+
+    Public Overrides Function ToString() As String
+        Return "Serie: " & Serie
+    End Function
 
 End Class

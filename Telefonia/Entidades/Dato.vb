@@ -5,8 +5,8 @@
         MyBase.New(credito, precio)
     End Sub
 
-    Public Sub NuevoConsumo(valor As UInteger)
+    'Public Sub NuevoConsumo(valor As UInteger)
 
-    End Sub
+    'End Sub
 
 End Class
