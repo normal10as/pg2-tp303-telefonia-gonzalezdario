@@ -17,7 +17,7 @@
     End Property
 
     Public Overrides Function ToString() As String
-        Return "Marca: " & Nombre
+        Return Nombre
     End Function
 
 End Class

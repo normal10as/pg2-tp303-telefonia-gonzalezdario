@@ -32,6 +32,6 @@
     End Property
 
     Public Overrides Function ToString() As String
-        Return "Razon Social: " & RazonSocial & " Cuenta: " & Cuenta
+        Return RazonSocial & " " & Cuenta
     End Function
 End Class
