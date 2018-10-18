@@ -3,10 +3,12 @@
     Private _codigoArea As UShort
     Private _numero As UInteger
     Private _activo As Boolean
+    Private _equipo As Equipo
 
-    Sub New(CodigoArea As UShort, Numero As UInteger)
-        Me.CodigoArea = CodigoArea
-        Me.Numero = Numero
+    Sub New(codigoArea As UShort, numero As UInteger, equipo As Equipo)
+        Me.Equipo = equipo
+        Me.CodigoArea = codigoArea
+        Me.Numero = numero
         _activo = True
     End Sub
 
@@ -25,6 +27,15 @@
         End Get
         Set(value As UInteger)
             _numero = value
+        End Set
+    End Property
+
+    Public Property Equipo As Equipo
+        Get
+            Return _equipo
+        End Get
+        Set(value As Equipo)
+            _equipo = value
         End Set
     End Property
 

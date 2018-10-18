@@ -1,11 +1,7 @@
-﻿Public Class Plan
+﻿Public MustInherit Class Plan
     Private _credito As UInteger
     Private _precio As Decimal
-
-    Sub New(credito As UInteger, precio As Decimal)
-        Me.Credito = credito
-        Me.Precio = precio
-    End Sub
+    Private _consumo As Decimal
 
     Public Property Credito As UInteger
         Get
@@ -26,13 +22,13 @@
     End Property
 
     Public Sub NuevoConsumo(valor As UInteger)
-        If valor < _credito Then
-            _credito = _credito - valor
+        If valor <= _credito Then
+            _consumo += valor
         End If
     End Sub
 
     Public Function GetDisponible() As UInteger
-        Return _credito
+        Return _credito - _consumo
     End Function
 
 End Class
