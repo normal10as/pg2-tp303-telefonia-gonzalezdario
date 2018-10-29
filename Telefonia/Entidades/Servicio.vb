@@ -1,4 +1,8 @@
-﻿Public MustInherit Class Plan
+﻿Imports Entidades
+
+Public Class Servicio
+    Implements IPlan
+
     Private _credito As UInteger
     Private _precio As Decimal
     Private _consumo As Decimal
@@ -12,7 +16,7 @@
         End Set
     End Property
 
-    Public Property Precio As Decimal
+    Public Property precio As Decimal Implements IPlan.precio
         Get
             Return _precio
         End Get
@@ -22,7 +26,7 @@
     End Property
 
     Public Sub NuevoConsumo(valor As UInteger)
-        If valor <= _credito Then
+        If valor <= GetDisponible() Then
             _consumo += valor
         End If
     End Sub
@@ -31,4 +35,11 @@
         Return _credito - _consumo
     End Function
 
+    Public Function getDisponibleToSTring() As String Implements IPlan.getDisponibleToSTring
+        Return GetDisponible() & " de " & _credito
+    End Function
+
+    Public Function getConsumosToSTring() As String Implements IPlan.getConsumosToSTring
+        Return _consumo
+    End Function
 End Class

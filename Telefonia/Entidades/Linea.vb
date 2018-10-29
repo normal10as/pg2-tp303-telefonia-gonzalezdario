@@ -17,7 +17,9 @@
             Return _codigoArea
         End Get
         Set(value As UShort)
-            _codigoArea = value
+            If value >= 100 And value <= 9999 Then
+                _codigoArea = value
+            End If
         End Set
     End Property
 
@@ -26,7 +28,9 @@
             Return _numero
         End Get
         Set(value As UInteger)
-            _numero = value
+            If value >= 100000 And value <= 999999 Then
+                _numero = value
+            End If
         End Set
     End Property
 

@@ -1,4 +1,4 @@
-﻿Public Class Cliente
+﻿Public MustInherit Class Cliente
     Private _cuenta As UInteger
     Private _lineas As List(Of Linea)
 

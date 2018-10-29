@@ -1,13 +1,13 @@
 ﻿Public Class SMS
-    Inherits Plan
+    Inherits Servicio
 
     Sub New(credito As UInteger, precio As Decimal)
         MyBase.Credito = credito
         MyBase.Precio = precio
     End Sub
 
-    Public Overrides Function GetDisponible() As UInteger
-        Throw New NotImplementedException()
+    Public Overrides Function ToString() As String
+        Return Credito & " mensajes "
     End Function
 
 End Class

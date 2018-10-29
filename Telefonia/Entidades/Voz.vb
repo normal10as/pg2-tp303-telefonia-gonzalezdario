@@ -1,5 +1,5 @@
 ﻿Public Class Voz
-    Inherits Plan
+    Inherits Servicio
     Private _minutos As DateTime
 
     Sub New(credito As UInteger, precio As Decimal)
@@ -16,11 +16,7 @@
         End Set
     End Property
 
-    Public Overrides Function GetDisponible() As UInteger
-        Throw New NotImplementedException()
-    End Function
-
     Public Overrides Function ToString() As String
-        Return GetDisponible() & Minutos
+        Return Credito & " minutos "
     End Function
 End Class

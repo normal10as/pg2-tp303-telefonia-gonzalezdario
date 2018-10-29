@@ -4,7 +4,8 @@
     Private _razonSocial As String
     Private _cuit As String
 
-    Sub New(razonSocial As String, cuit As String)
+    Sub New(cuenta As UInteger, razonSocial As String, cuit As String)
+        MyBase.New(cuenta)
         Me.RazonSocial = razonSocial
         Me.Cuit = cuit
     End Sub
